@@ -1,0 +1,6 @@
+genrule(
+    name = "hello_world",
+    out = "out.txt",
+    srcs = ["source.txt"],
+    cmd = "cat $(location //:hello_world) > $OUT && cat source.txt >> $OUT",
+)
