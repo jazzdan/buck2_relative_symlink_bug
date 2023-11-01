@@ -4,3 +4,9 @@ genrule(
     srcs = ["source.txt"],
     cmd = "cat $(location //:hello_world) > $OUT && cat source.txt >> $OUT",
 )
+
+genrule(
+    name = "hello_world_no_source",
+    out = "out.txt",
+    cmd = "cat $(location //:hello_world) && echo nosource > $OUT",
+)
